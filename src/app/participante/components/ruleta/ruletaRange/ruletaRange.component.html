@@ -1,0 +1,17 @@
+<div class="space-y-2 flex justify-center items-center w-full">
+  <div
+    class="relative flex w-2/3 h-4 bg-gray-200 rounded-full overflow-hidden dark:bg-neutral-700"
+    role="progressbar"
+  >
+    <!-- Gradiente fijo que siempre está detrás -->
+    <div
+      class="absolute inset-0 bg-gradient-to-r from-blue-500 via-yellow-500 to-red-500"
+    ></div>
+
+    <!-- Capa que tapa el gradiente desde la derecha -->
+    <div
+      class="absolute top-0 right-0 h-full bg-gray-200 dark:bg-neutral-700"
+      [style.width.%]="valueRange()"
+    ></div>
+  </div>
+</div>

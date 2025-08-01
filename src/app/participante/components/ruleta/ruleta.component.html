@@ -1,0 +1,45 @@
+<div class="fixed inset-0 flex flex-col items-center justify-center z-50">
+  <jump-title [title]="'Rueda de la suerte'"></jump-title>
+  <section id="ruleta">
+    <div class="flex flex-col items-center mt-10">
+      <div
+        class="top-[3rem] left-1/2 transform rotate-180 w-0 h-0 border-l-[10px] border-r-[10px] border-b-[20px] border-l-transparent border-r-transparent border-b-black z-10"
+      ></div>
+      <canvas
+        #wheel
+        id="wheel"
+        width="600"
+        height="600"
+        class="border-4 border-gray-700 rounded-full shadow-lg"
+      ></canvas>
+    </div>
+  </section>
+  <section id="ruleta-range" class="mt-6 w-full">
+    <ruleta-range
+      [stop]="stop()"
+      (strongToPull)="spinWheel($event)"
+    ></ruleta-range>
+  </section>
+  <section id="btn-girar">
+    <div class="flex justify-center mt-6">
+      <button
+        (click)="startSpinWheel()"
+        class="w-40 bg-blue-600 text-white px-6 py-2 rounded cursor-pointer beat hover:bg-blue-700 transition"
+      >
+        Girar
+      </button>
+    </div>
+  </section>
+
+  <app-item
+    [itemName]="itemNameChosen()"
+    [itemDescription]="itemDescriptionChosen()"
+    [itemImage]="itemImageChosen()"
+    [(showItemDetails)]="showItemDetails"
+    [class.hidden]="!showItemDetails()"
+  ></app-item>
+  <input-name
+    (nameChange)="name.set($event)"
+    [class.hidden]="name() !== '' || showItemDetails()"
+  ></input-name>
+</div>

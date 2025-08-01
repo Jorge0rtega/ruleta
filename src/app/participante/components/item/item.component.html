@@ -1,0 +1,26 @@
+<div class="fixed inset-0 bg-black/50 backdrop-blur-sm z-40 fade-in"></div>
+
+<div class="fixed inset-0 flex items-center justify-center z-50">
+  <div class="bg-white shadow-lg rounded-lg p-4 w-[500px] mx-auto relative pop">
+    <button
+      (click)="close()"
+      class="text-gray-500 hover:text-gray-700 transition absolute top-2 right-2 px-3 py-1 text-3xl"
+    >
+      &times;
+    </button>
+    <div class="flex flex-col items-center justify-evenly h-full">
+      <h1 class="text-4xl font-bold">Felicidades!!!</h1>
+      <h2 class="text-3xl font-semibold">Has ganado lo siguiente:</h2>
+      <h3 class="text-2xl">{{ itemName() }}</h3>
+      <p class="text-2xl">{{ formattedDescription() }}</p>
+      <div class="w-96 my-4 flex items-center justify-center">
+        <img
+          [src]="itemImage()"
+          alt="Imagen del premio"
+          class="object-cover rounded-2xl fade-in"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+<confetti></confetti>

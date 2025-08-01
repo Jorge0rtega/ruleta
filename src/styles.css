@@ -1,0 +1,90 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: Redressed;
+  src: url("../public/assets/fonts/Redressed-Regular.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Basic";
+  src: url("../public/assets/fonts/Basic-Regular.ttf") format("truetype");
+}
+
+@theme {
+  --font-redressed: "Redressed", "sans-serif";
+  --font-basic: "Basic", "sans-serif";
+}
+
+body {
+  @apply bg-gray-100 text-gray-900;
+  font-family: var(--font-basic);
+  font-size: 2rem;
+}
+
+.fade-in {
+  animation: fadeIn 0.5s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.pop {
+  animation: pop 0.5s ease forwards;
+}
+
+.beat {
+  animation: beat 2s ease-in-out infinite;
+}
+
+@keyframes pop {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2); /* Más grande */
+  }
+  75% {
+    transform: scale(0.9); /* Más chica */
+  }
+  100% {
+    transform: scale(1); /* Tamaño original */
+  }
+}
+
+@keyframes beat {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2); /* Más grande */
+  }
+  100% {
+    transform: scale(1); /* Tamaño original */
+  }
+}
+
+.confetti {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background-color: hsl(var(--hue), 70%, 60%);
+  opacity: 0.8;
+  animation: fall 3s linear infinite;
+  border-radius: 2px;
+}
+
+@keyframes fall {
+  0% {
+    transform: translateY(-100px) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh) rotate(360deg);
+    opacity: 0;
+  }
+}
