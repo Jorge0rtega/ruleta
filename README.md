@@ -2,7 +2,7 @@
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.11. This is a roulette where you can add a spin force, this project don't use a backend because all the data is given by an excel file.
 
-### participants route
+### Admin route
 
 The route for the admin is [admin route](http://localhost:4200/#/admin/dashboard) in this page you only upload the excel file and the system load the data.
 
@@ -16,7 +16,7 @@ The route for the admin is [admin route](http://localhost:4200/#/admin/dashboard
 > [!NOTE]  
 > Any time in the admin route you can modify the data, the system decide if an item should be show in the roulette if don't have an nombreParticipante that's the reason this column could be empty.
 
-### participants route
+### Participants route
 
 Finally the route for the participants is [participants route](http://localhost:4200/#/participante/ruleta).
 
